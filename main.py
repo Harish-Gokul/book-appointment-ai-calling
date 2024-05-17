@@ -11,6 +11,7 @@ CORS(app)
 @app.route("/bookappointment",methods=["POST"])
 def handleChatRequest():
     payload = request.get_json()
+    print(payload)
     return sendChatRequest(payload)
 
 # PC_CB_6 to PC_CB_7 -  call app.run only if this file is executed
