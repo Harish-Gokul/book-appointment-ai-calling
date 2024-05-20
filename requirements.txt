@@ -3,3 +3,4 @@ flask_cors
 hmac
 hashlib
 base64
+python-decouple
