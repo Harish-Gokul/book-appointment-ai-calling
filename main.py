@@ -24,7 +24,7 @@ def verify_webhook(data, hmac_header):
 def handleChatRequest():
     payload = request.get_json()
     print(payload)
-    verified = verify_webhook(data, request.headers.get('X-Signature-SHA256'))
+    verified = verify_webhook(payload, request.headers.get('X-Signature-SHA256'))
     if not verified:
         abort(401)
     return sendChatRequest(payload)
