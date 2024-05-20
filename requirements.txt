@@ -1,2 +1,5 @@
 flask
 flask_cors
+hmac
+hashlib
+base64
