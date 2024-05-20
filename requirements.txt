@@ -1,5 +1,4 @@
 flask
 flask_cors
 hmac
-base64
 python-decouple
