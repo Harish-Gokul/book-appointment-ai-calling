@@ -5,13 +5,15 @@ from flask_cors import CORS
 import hmac
 import hashlib
 import base64
+from decouple import config
 
 # PC_CB_4 to PC_CB_5 - Create an instance for flask and invoking CORS by pass app as object 
 app = Flask(__name__)
 CORS(app)
 
+API_SECRET_KEY = config("webhook_api_secret")
 def verify_webhook(data, hmac_header):
-		# Calculate HMAC
+	 
     digest = hmac.new(API_SECRET_KEY.encode('utf-8'), data, digestmod=hashlib.sha256).digest()
     computed_hmac = base64.b64encode(digest)
 
