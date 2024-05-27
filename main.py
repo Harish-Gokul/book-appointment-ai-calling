@@ -21,6 +21,13 @@ def handleChatRequest():
         raise TypeError(str(payload))
     return sendChatRequest(payload)
 
+@app.route("/reconnect",methods=["POST"])
+def handleReconnect():
+    payload = request.get_json()
+    if("show_log" in payload and "yes" in payload.get("show_log")):
+        raise TypeError(str(payload))
+    return reconnectLater(payload)
+
 # PC_CB_6 to PC_CB_7 -  call app.run only if this file is executed
 if(__name__ == "__main__"):
     app.run(port=5000,host="0.0.0.0")
