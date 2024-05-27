@@ -16,9 +16,8 @@ CORS(app)
 # PC_CB_8 - PC_CB_11 - to handle request with /chatbot as endpoint
 @app.route("/bookappointment",methods=["POST"])
 def handleChatRequest():
-    payload = request.get_json()
-    if("show_log" in payload and "yes" in payload.get("show_log")):
-        raise TypeError(str(payload))
+    payload = request.get_json() 
+    raise TypeError(str(payload))
     return sendChatRequest(payload)
 
 @app.route("/reconnect",methods=["POST"])
