@@ -22,7 +22,7 @@ def handleChatRequest():
 
 @app.route("/reconnect",methods=["POST"])
 def handleReconnect():
-    payload = request.get_json()
+    payload = request.get_json() 
     if("show_log" in payload and "yes" in payload.get("show_log")):
         raise TypeError(str(payload))
     return reconnectLater(payload)
